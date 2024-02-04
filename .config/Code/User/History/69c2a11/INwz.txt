@@ -1,0 +1,26 @@
+introducao
+
+requirements (bibliotecas, linguagem de programacao e aplicativo para testar a api)
+
+    - flask, psycopg2, pandas e werkzeug
+
+anatomia de um endpoint
+
+    - conexao
+    - validacao dos inputs
+    - logica da endpoint
+    - tratamento de erros
+
+funcoes de auxilio e variaveis globais
+
+    - app.json.sort_keys = False
+    - StatusCodes
+    - db_connection
+    - create_tables
+    - insert_df_in_db
+    - verify_request_body
+
+
+
+
+

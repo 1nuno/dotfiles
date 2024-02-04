@@ -1,0 +1,58 @@
+* General instructions
+#> = Using the root user
+$> = Normal user
+
+++++++ Installing and testing RabbitMQ +++++
+
+- Install rabbitmq via the rabbitmq-setup.sh
+ 1 - Copy the file rabbitmq-setup.sh
+ 2 - Change/Verify the file's permisson
+ #>ls -l
+ #>chmod 755 rabbitmq-setup.sh
+ 3 - Execute the script
+ #>./rabbitmq-setup.sh
+ 4 - Check rabbitmq status
+ #>service rabbitmq-server status
+ 5 - Check open ports
+ #>netstat -tupana
+
+- RabbitMQ Hello World!
+ 1 - Install pika in the machine that will execute the codes
+ #>apt install python3-pika
+ 2 - Create a directory (e.g., rabbitmq)and move into it
+ #>mkdir rabbitmq
+ #>cd rabbitmq
+ 3 - Copy the file send.py and receive.py to the VM using scp or WinSCP and analize/discuss their codes (alterei o ip que la estava para "localhost")
+ 4 - Change the permissons of the files send.py and receive.py
+ #>chmod 755 send.py receive.py
+ 5 - Execute the receiver
+ #>python3 receive.py
+ 6 - Execute the sender
+ #>python3 send.py
+ 
+- RabbitMQ Hello World! from the outside
+ 1 - Now the idea is to execute the send.py and receive.py in your physical machine and communicate them using the rabbitmq in the VM
+ 2 - First, check the IP address of the VM. In the first interface look for the IP after the token inet.
+ #>ifconfig
+ 3 - Change the host=' ... ' in send.py and receive.py
+ 4 - To run the program you need python and pika installed on your physical machine
+ 5 - If your machine is Linux you can install pika exactly as we did before. For other systems, you can use pip (https://www.geeksforgeeks.org/how-to-install-pip-on-windows).
+ #>pip install pika
+ 6 - To enable external connection to rabbitmq we need to change the configurations of the service. Copy the file rabbitmq. conf to the directory /etc/rabbitmq/rabbitmq.conf in your VM.
+ 7 - Restart the rabbitmq service and check its status
+ #>service rabbitmq-server restart
+ #>service rabbitmq-server status
+ 5 - Execute the receiver
+ #>python3 receive.py
+ 6 - Execute the sender
+ #>python3 send.py
+
+- Enable rabbitmq pluggins
+ 1 - Check the list of plugins available for rabbitmq
+ #>rabbitmq-plugins list
+ 2 - Enable the plugin rabbitmq-management
+ #>rabbitmq-plugins enable rabbitmq-management
+ 3 - Check the list of plugins available for rabbitmq
+ #>rabbitmq-plugins list
+ 4 - Test the access to the rabbitmq management website via a browser using the IP of your VM and port 15672 --> http://<ip-VM>:15672
+ 5 - Credentials are: guest guest

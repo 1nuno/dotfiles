@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  rabbitmq:
+    build: ./rabbitmq/
+    restart: on-failure
+  
+  receiver:
+    build: ./receiver/
+    restart: on-failure
+
+  sender:
+    image: ./sender/
+    restart: on-failure

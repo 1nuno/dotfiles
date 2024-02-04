@@ -1,0 +1,5 @@
+docker network create mariadb-network
+
+docker run -dit --name mariadb --network mariadb-network -e MARIADB_ROOT_PASSWORD=my-secret-pw -e MARIADB_DATABASE=testdb -v /home/mariadb:/var/lib/mysql -v /root/SIC/exercice4/default_table.sql:/docker-entrypoint-initdb.d mariadb:latest
+
+docker run -dit --name phpmyadmin --network mariadb-network -e PMA_HOST=mariadb -p 8080:80 phpmyadmin

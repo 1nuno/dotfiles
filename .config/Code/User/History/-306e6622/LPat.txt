@@ -1,0 +1,196 @@
+1. Create Item (POST)
+
+Uma simples query INSERT para adicionar um item na respetiva tabela.
+
+
+2. Update Item (PUT)
+
+Uma simples query UPDATE para atualizar um item na respetiva tabela.
+
+
+3. Delete Item from Shopping Cart (DELETE)
+
+Uma simples query DELETE para apagar um item na respetiva tabela.
+
+
+4. Add Item to Shopping Cart (POST) 
+
+como nos vamos saber qual o cart referido?
+
+http://localhost:8080/proj/api/cart <---------- original
+http://localhost:8080/proj/api/{cart} <---------- meu metodo
+
+Verificar se ja existe o item no cart se nao existir criar e adicionar se ja existe entao so adicionar a quantidade.
+
+
+9. 
+
+
+CREATE TABLE item (
+	id		 BIGSERIAL,
+	name		 VARCHAR(20) NOT NULL,
+	price		 FLOAT(8) NOT NULL,
+	stock		 BIGINT NOT NULL,
+	description	 VARCHAR(512),
+	weight		 FLOAT(5),
+	image_url	 VARCHAR(150),
+	last_updated	 TIMESTAMP NOT NULL,
+	manufacturer_id BIGINT NOT NULL,
+	category_id	 BIGINT NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE client (
+	id		 VARCHAR(512),
+	name	 VARCHAR(100) NOT NULL,
+	email	 VARCHAR(50),
+	last_updated TIMESTAMP NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE cart (
+	created	 TIMESTAMP NOT NULL,
+	client_id VARCHAR(512),
+	PRIMARY KEY(client_id)
+);
+
+CREATE TABLE purchase (
+	id		 BIGSERIAL,
+	purchase_date TIMESTAMP NOT NULL,
+	price	 FLOAT(8) NOT NULL,
+	client_id	 VARCHAR(512) NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE category (
+	id		 BIGSERIAL,
+	name	 VARCHAR(100) NOT NULL,
+	last_updated TIMESTAMP NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE manufacturer (
+	id		 BIGSERIAL,
+	name	 VARCHAR(512) NOT NULL,
+	last_updated TIMESTAMP NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE cart_item (
+	quantity	 INTEGER NOT NULL,
+	item_id	 BIGINT,
+	cart_client_id VARCHAR(512),
+	PRIMARY KEY(item_id,cart_client_id)
+);
+
+CREATE TABLE purchase_item (
+	quantity	 BIGINT,
+	purchase_id BIGINT,
+	item_id	 BIGINT,
+	PRIMARY KEY(quantity,purchase_id,item_id)
+);
+
+ALTER TABLE item ADD CONSTRAINT item_fk1 FOREIGN KEY (manufacturer_id) REFERENCES manufacturer(id);
+ALTER TABLE item ADD CONSTRAINT item_fk2 FOREIGN KEY (category_id) REFERENCES category(id);
+ALTER TABLE cart ADD CONSTRAINT cart_fk1 FOREIGN KEY (client_id) REFERENCES client(id);
+ALTER TABLE purchase ADD CONSTRAINT purchase_fk1 FOREIGN KEY (client_id) REFERENCES client(id);
+ALTER TABLE category ADD UNIQUE (name);
+ALTER TABLE manufacturer ADD UNIQUE (name);
+ALTER TABLE cart_item ADD CONSTRAINT cart_item_fk1 FOREIGN KEY (item_id) REFERENCES item(id);
+ALTER TABLE cart_item ADD CONSTRAINT cart_item_fk2 FOREIGN KEY (cart_client_id) REFERENCES cart(client_id);
+ALTER TABLE purchase_item ADD CONSTRAINT purchase_item_fk1 FOREIGN KEY (purchase_id) REFERENCES purchase(id);
+ALTER TABLE purchase_item ADD CONSTRAINT purchase_item_fk2 FOREIGN KEY (item_id) REFERENCES item(id);
+
+
+ALTER TABLE item ALTER COLUMN last_updated SET DEFAULT now();
+ALTER TABLE cart ALTER COLUMN created SET DEFAULT now();
+ALTER TABLE purchase ALTER COLUMN purchase_date SET DEFAULT now();
+ALTER TABLE category ALTER COLUMN last_updated SET DEFAULT now();
+ALTER TABLE manufacturer ALTER COLUMN last_updated SET DEFAULT now();
+ALTER TABLE client ALTER COLUMN last_updated SET DEFAULT now();
+
+
+CREATE OR REPLACE FUNCTION check_stock()
+RETURNS TRIGGER
+AS
+$$
+DECLARE
+	available_stock INTEGER;
+BEGIN
+	SELECT stock FROM item WHERE item.id = NEW.item_id INTO available_stock;
+    IF NEW.quantity > available_stock THEN
+        RAISE EXCEPTION 'Not enough stock :(.';
+    END IF;
+    RETURN NEW;
+END;
+$$ 
+LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS check_stock on public.cart_item;
+
+CREATE TRIGGER check_stock
+BEFORE INSERT OR UPDATE ON cart_item
+FOR EACH ROW
+EXECUTE FUNCTION check_stock();
+
+
+
+
+WITH items_sum AS (
+    SELECT item_id, SUM(quantity) AS quantity_total
+    FROM purchase_item
+    GROUP BY item_id
+),
+grouped_data AS (
+    SELECT items_sum.item_id, item.category_id, items_sum.quantity_total
+    FROM items_sum
+    LEFT JOIN item ON items_sum.item_id = item.id
+),
+ranked_grouped_data AS (
+    SELECT *,
+           ROW_NUMBER() OVER(PARTITION BY category_id ORDER BY quantity_total DESC) AS item_rank
+    FROM grouped_data
+)
+SELECT item_id, quantity_total, category_id
+FROM ranked_grouped_data
+WHERE item_rank <= 3;
+
+
+CREATE OR REPLACE FUNCTION create_cart_if_not_exists()
+RETURNS TRIGGER 
+AS 
+$$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM cart WHERE client_id = NEW.cart_client_id) THEN
+        INSERT INTO cart (client_id)
+        VALUES (NEW.cart_client_id);
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER create_cart_if_not_exists
+BEFORE INSERT ON cart_item
+FOR EACH ROW
+EXECUTE FUNCTION create_cart_if_not_exists();
+
+
+
+
+
+CREATE OR REPLACE FUNCTION clean_cart_item_if_not_empty()
+RETURNS TRIGGER
+AS 
+$$
+BEGIN
+    IF EXISTS (SELECT 1 FROM cart_item WHERE cart_client_id = NEW.cart_client_id) THEN
+		DELETE FROM cart_item WHERE cart_client_id=NEW.cart_client_id;
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER clean_cart_item_if_not_empty
+BEFORE INSERT ON cart_item
+FOR EACH STATEMENT
+EXECUTE FUNCTION clean_cart_item_if_not_empty();

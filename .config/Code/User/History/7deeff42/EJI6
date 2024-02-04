@@ -1,0 +1,5 @@
+ver a cena do order by no ponto 5. ordenar algo ja ordenado afeta a performance?
+
+ainda no ponto 5 em vez de dar erro quando a categoria nao existe ele simplesmente nao retorna nada
+
+verificacao dos inputs no 5? adicionei as boas praticas contra injection mas se calhar e melhor implementar uma verificacao dos inputs para so permitir os especificados no enunciado

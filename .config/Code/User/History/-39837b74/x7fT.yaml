@@ -1,0 +1,71 @@
+version: '3.8'
+services:
+  rabbitmq:
+    build: . 
+    image: rabbitmq:alice
+    container_name: rabbitmq
+    hostname: my-rabbit
+    restart: on-failure
+    networks:
+      - rabbitmq-network
+
+  mariadb:
+    image: "mariadb:latest"
+    container_name: mariadb
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: projeto
+      MYSQL_DATABASE: sic
+    volumes:
+      - joanadd_data_sic:/var/lib/mysql
+    networks:
+      - mariadb-network
+
+  phpmyadmin:
+    image: "phpmyadmin:latest"
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: mariadb
+      PMA_USER: root
+      PMA_PASSWORD: projeto
+    ports:
+      - "8080:80"
+    networks:
+      - mariadb-network
+    depends_on:
+      - mariadb
+
+  token_generator:
+    build: ./token_generator
+    image: app-pub:1.0
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+      - token_processing
+    networks:
+      - rabbitmq-network
+
+  token_processing:
+    build: ./token_processing
+    image: app-sub:1.0
+    container_name: token_processing
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+      - mariadb
+    networks:
+      - rabbitmq-network
+      - mariadb-network
+      
+volumes:
+  joanadd_data_sic:
+    name: joanadd_data_sic
+    driver: local
+
+networks:
+  rabbitmq-network:
+    name: rabbitmq-network
+    driver: bridge
+  mariadb-network:
+    name: mariadb-network
+    driver: bridge

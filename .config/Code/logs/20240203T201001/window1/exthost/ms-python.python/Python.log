@@ -1,0 +1,13 @@
+2024-02-03 20:10:03.879 [info] Experiment 'pythonRecommendTensorboardExt' is active
+2024-02-03 20:10:03.879 [info] Experiment 'pythonREPLSmartSend' is active
+2024-02-03 20:10:03.879 [info] Experiment 'pythonSurveyNotification' is active
+2024-02-03 20:10:03.879 [info] Experiment 'pythonTerminalEnvVarActivationcf' is active
+2024-02-03 20:10:03.879 [info] Experiment 'pythonTestAdapter' is active
+2024-02-03 20:10:03.879 [info] Default formatter is set to ms-python.black-formatter for workspace /home/1nuno/Desktop/personal
+2024-02-03 20:10:03.879 [info] Test server listening.
+2024-02-03 20:10:03.879 [info] Python interpreter path: /bin/python
+2024-02-03 20:10:03.918 [warning] Retry failed, storage update failed for key PYTHON_WORKSPACE_STORAGE_KEYS
+2024-02-03 20:10:03.918 [warning] Retry failed, storage update failed for key PYTHON_WORKSPACE_STORAGE_KEYS
+2024-02-03 20:10:03.918 [warning] Retry failed, storage update failed for key PYTHON_WORKSPACE_STORAGE_KEYS
+2024-02-03 20:10:04.095 [warning] Retry failed, storage update failed for key PYTHON_WORKSPACE_STORAGE_KEYS
+2024-02-03 20:10:05.130 [info] Starting Pylance language server.

@@ -1,0 +1,17 @@
+
+O que e um serializable schedule?
+
+um schedule S, composto pelo conjunto de transacoes T, diz-se serializable se existir para o mesmo conjunto T, outro schedule S' cujo seu efeito final a base de dados e igual ao do S.
+
+o que e um conflict serializable schedule?
+
+um schedule S, composto pelo conjunto de transacoes T, diz-se conflict serializable se for possivel obter para o mesmo conjunto T um serial schedule S' atraves de trocas adjacentes de acoes nao conflictuosas entre as transacoes.
+In other words it is a schedule that is conflic equivalent to a serial schedule.
+
+o que e um conflict equivalent schedule?
+
+um schedule S, composto pelo conjunto de transacoes T, diz-se conflict equivalent ao schedule S' se for possivel obter para o mesmo conjunto T obter S' atraves de trocas adjacentes de acoes nao conflictuosas entre as transacoes de S.
+
+o que e um view serializable schedule?
+
+um schedule S, composto pelo conjunto de transacoes T, diz-se view serializable se for view equivalent a um serial schedule.

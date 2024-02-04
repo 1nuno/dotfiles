@@ -1,0 +1,212 @@
+{
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  //vim.insertModeKeyBindings": [
+  //{ "before": ["j", "j"],
+  //"after": ["<Esc>"]
+  //}],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "a"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "vscode-harpoon.editEditors"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "p",
+        "e"
+      ],
+      "commands": [
+        "vscode-harpoon.editorQuickPick"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "1"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor1"
+      ]
+    },
+    {
+      "before": [
+        "p"
+      ],
+      "after": [
+        "g",
+        "P"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "after": [
+        "d",
+        "d"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "n"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "f"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "d"
+      ],
+      "commands": [
+        "editor.action.revealDefinition",
+      ]
+    },
+    {
+      "before": [
+        "K",
+      ],
+      "commands": [
+        "editor.action.peekDefinition",
+        "togglePeekWidgetFocus"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    // Stay in visual mode while indenting
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    },
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    // toggle comment selection
+    {
+      "before": [
+        "leader",
+        "c"
+      ],
+      "commands": [
+        "editor.action.commentLine"
+      ]
+    },
+    {
+      "vim.useSystemClipboard": true,
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  // To improve performance 
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "editor.renderLineHighlight": "none",
+  "workbench.tips.enabled": false,
+  "workbench.startupEditor": "none",
+  "workbench.activityBar.location": "hidden",
+  "editor.inlineSuggest.showToolbar": "never",
+  "security.workspace.trust.enabled": false,
+  "extensions.ignoreRecommendations": true,
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.editor.enablePreview": false,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.enabled": false,
+  "editor.rulers": [],
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 110,
+  "editor.snippetSuggestions": "none",
+  "editor.inlineSuggest.enabled": false,
+  "editor.lineNumbers": "relative",
+  "editor.parameterHints.enabled": false,
+  "editor.quickSuggestions": {
+    "other": "off"
+  },
+  "window.zoomLevel": 4,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.terminal.activateEnvironment": false,
+  "workbench.editor.showTabs": "none",
+  "editor.multiCursorLimit": 10000,
+  "editor.codeLens": false,
+//  "terminal.integrated.cwd": "/home/1nuno"
+"fzf-quick-open.initialWorkingDirectory":"/home/1nuno",
+"fzf-quick-open.findDirectoriesCmd": "fd --type d",
+"window.menuBarVisibility": "toggle",
+"workbench.colorCustomizations": {
+    "statusBar.background" : "#011627",
+    "statusBar.border": "#0000",
+    "panel.border":"#0000",
+    "panelTitle.activeBorder":"#0000",
+    "panelTitle.activeForeground":"#219fd5",
+    "panelTitle.inactiveForeground":"#219fd5",
+    "sideBar.border":"#0000",
+    "sideBarSectionHeader.border":"#0000",
+    "sideBarTitle.foreground":"#0000",
+    "editorOverviewRuler.border": "#0000",
+    "focusBorder": "#0000",
+    "editorOverviewRuler.findMatchForeground": "#0000",
+    "editorOverviewRuler.rangeHighlightForeground": "#0000",
+    "editorOverviewRuler.selectionHighlightForeground": "#0000",
+    "editorOverviewRuler.wordHighlightForeground": "#0000",
+    "editorOverviewRuler.wordHighlightStrongForeground": "#0000",
+    "editorOverviewRuler.modifiedForeground": "#0000",
+    "editorOverviewRuler.addedForeground": "#0000",
+    "editorOverviewRuler.deletedForeground": "#0000",
+    "editorOverviewRuler.errorForeground": "#0000",
+    "editorOverviewRuler.warningForeground": "#0000",
+    "editorOverviewRuler.infoForeground": "#0000",
+    "editorOverviewRuler.bracketMatchForeground": "#0000",
+  },
+  "breadcrumbs.enabled": false,
+  "editor.mouseWheelScrollSensitivity": 3,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.overviewRulerBorder": false,
+  "scm.diffDecorations": "none",
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "workbench.editor.splitInGroupLayout": "vertical",
+}
+
+

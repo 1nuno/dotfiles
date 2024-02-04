@@ -1,0 +1,97 @@
+# Colors (dark_pastels on https=//github.com/alacritty/alacritty-theme/blob/master/themes/dark_pastels.toml)
+#
+#[colors.primary]
+#background = '#c2a58c'
+##foreground = '#573914'
+#foreground = '#000000'
+#
+## Normal colors
+#[colors.normal]
+#black   = '#3F3F3F'
+#red     = '#5e2f1a'
+#green   = '#606b3e'
+#yellow  = '#DFAF8F'
+#blue    = '#284564'
+#magenta = '#2872a8'
+#cyan    = '#000000'
+#white   = '#DCDCCC'
+#
+## Bright colors
+#[colors.bright]
+#black   = '#3F3F3F'
+#red     = '#5e2f1a'
+#green   = '#606b3e'
+#yellow  = '#DFAF8F'
+#blue    = '#284564'
+#magenta = '#5285AB'
+#cyan    = '#284564'
+#white   = '#DCDCCC'
+#
+#[colors.cursor]
+#cursor = '#284564'
+#text = '#ffffff'
+#-----------------------------------------------------------------------------------------------------------------------------------
+
+# Default colors
+[colors.primary]
+    background = '#fbf1c7'
+#background = '#fbf1c7'
+# soft contrast background = = '#f2e5bc'
+foreground = '#284564'
+ # foreground = '#ffffff'
+
+# Normal colors
+[colors.normal]
+black   = '#fbf1c7'
+red     = '#cc241d'
+green   = '#98971a'
+yellow  = '#d79921'
+blue    = '#458588'
+magenta = '#b16286'
+cyan    = '#689d6a'
+white   = '#7c6f64'
+
+# Bright colors
+[colors.bright]
+black   = '#928374'
+red     = '#9d0006'
+green   = '#79740e'
+yellow  = '#b57614'
+blue    = '#076678'
+magenta = '#8f3f71'
+cyan    = '#427b58'
+white   = '#3c3836'
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 18.0
+
+[font.bold]
+family = "CaskaydiaMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "CaskaydiaMono Nerd Font"
+style = "SemiBold"
+
+[font.italic]
+family = "CaskaydiaMono Nerd Font"
+style = "Light"
+
+[font.normal]
+family = "CaskaydiaMono Nerd Font"
+style = "Regular"
+
+[window]
+opacity = 0.95
+
+[scrolling]
+  # How many lines of scrollback to keep,
+  # '0' will disable scrolling.
+  history= 10000
+
+  # Number of lines the viewport will move for every line
+  # scrolled when scrollback is enabled (history > 0).
+  multiplier= 3

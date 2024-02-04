@@ -1,0 +1,83 @@
+version: "3.8"
+
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb
+    restart: on-failure
+    healthcheck:
+      test: [ "CMD", "./mariadb/healthcheck.sh", "--connect", "--innodb_initialized" ]
+      start_period: 1m
+      start_interval: 10s
+      interval: 1m
+      timeout: 20s
+      retries: 3
+    environment:
+      MARIADB_ROOT_PASSWORD: my-secret-pw
+      MARIADB_DATABASE: sic
+    volumes:
+      - ./mariadb/persistance-data:/var/lib/mysql
+      - ./table.sql:/docker-entrypoint-initdb.d/table.sql
+    networks:
+      - mariadb-network
+
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: on-failure
+    environment:
+      - PMA_HOST=mariadb
+    ports:
+      - "8079:80"
+    networks:
+      - mariadb-network
+    depends_on:
+      mariadb:
+        condition: service_healthy
+
+
+  rabbitmq:
+    build: ./rabbitmq
+    image: rabbitmq:mvp3
+    container_name: rabbitmq
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 10s
+      timeout: 30s
+      retries: 5
+    hostname: my-rabbit
+    restart: on-failure
+    networks:
+      - rabbitmq-network
+
+  sub:
+    build: ./sub
+    image: sub:mvp3
+    container_name: sub
+    restart: on-failure
+    networks:
+      - mariadb-network
+      - rabbitmq-network
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      mariadb:
+        condition: service_healthy
+  pub:
+    build: ./pub
+    image: pub:mvp3
+    container_name: pub
+    restart: on-failure
+    networks:
+      - rabbitmq-network
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      - sub
+
+networks:
+  mariadb-network:
+    name: mariadb-network
+  rabbitmq-network:
+    name: rabbitmq-network

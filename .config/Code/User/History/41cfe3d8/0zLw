@@ -1,0 +1,14 @@
+# Ignore all dot files
+.*
+!.gitignore
+
+#Ignore all dot.csv files
+*.csv
+
+# Ignore specific files
+__init__.py
+log.txt
+playground.ipynb
+
+# Ignore specific folders
+__pycache__/

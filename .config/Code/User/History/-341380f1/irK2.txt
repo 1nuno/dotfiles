@@ -1,0 +1,177 @@
+________________________________________________________________________
+Cloud Computing
+________________________________________________________________________
+https://www.redhat.com/en/topics/cloud-computing/iaas-vs-paas-vs-saas
+
+i found this article explaining saas, paas and iaas. It mentions something called runtime wtf is that?
+
+containers as a service ajuda com runtime? https://cloud.google.com/learn/paas-vs-iaas-vs-saas
+
+also in the slides says that in the iaas we can control storage but both this redhat and the google article says that contrair....?
+
+
+how can a private cloud be owned by a third party? doesnt this defeat its purpose of privacy and security?
+
+what does having a public cloud thats highly standardized mean?
+
+what does it mean to exists on or off premises (community cloud)?
+
+what does it mean to access it from outside or inside the firewall?
+
+if in the hybrid cloud model the private cloud can be replaced by the public cloud in case of failure doesnt that mean that the private cloud can also be replaced if theres no failure at all breaking in this case the premise of security?
+
+for the hybrid cloud i understood the advantages of the interaction between the public and private cloud but what about:
+
+- public and community?
+- private and community?
+
+
+check the black board for doubts and questions on the relation between multi tenancy, resource pooling and rapid elasticity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________
+VIRTUALIZATION - SERVER
+________________________________________________________________________
+
+what is the difference between hardware virtualization and software virtualization according to that vmware article? i cant tell... (https://www.vmware.com/sg/topics/glossary/content/virtual-machine.html?resource=cat-2039547406#cat-2039547406);
+
+
+how does high distributed computing tech allows for higher centralization? shouldnt it be decentralization? and why does that help with the virtualization comeback?
+
+
+###############################################################################in the slides there are images explaining the full, para and hardware virtualization. In those images, the OS refers to the machine OS or the VM OS?
+
+if the "guest os" mentioned the the examples is the VM OS then can we consider all of those examples to be type I? if not then considering the categories type I hypervisor and type II hypervisor. classify these 3: full virtualization, para virtualization, hardware virtualization...
+
+
+1. check mind map (site: https://fawzi.wordpress.com/2009/05/24/virtualization-and-protection-rings-welcome-to-ring-1-part-i/
+keyphrase: In this scenario, the hypervisor provides CPU emulation to handle and modify privileged and protected CPU operations made by unmodified guest operating system kernels)
+-----------------------------
+how can apps in ring 3 execute stuff directly in the hardware (according to the illustrations shown) ?????
+
+
+Can i look at a virtual appliance as being a sort of container ancestor? The way im understanding is, a virtual appliance its just a specific use case of a virtual machine, its a VM's image with the necessary configurations to execute a specific use case automatically.
+
+
+In the slides (T2, pag.20) i dont understand how just a standalone OS can be considered an appliance...I thought you had to have a sort of app thats configured on the OS for it to be considered an appliance..
+
+O .iso que o professor nos deu é uma appliance?
+
+If a virtual appliance is really an early version of a container, is it still used to this day? and why?
+
+
+what is appliance consolidation? (pag.22)?
+
+
+no link da pagina 23 (https://serverhobbyist.com/wp-content/uploads/2018/10/Dell-Best-Practices-for-Oversubscription-of-CPU-Memory-and-Storage-in-vSphere-Virtual-Environments_0.pdf)
+eu vejo overprovisioning e Oversubscription being used interchangebly, are they the same?
+the way i think about it overprovisioning is just giving more than they need and Oversubscription is giving them more than its available...
+
+
+in the slide 24, where it talks about enhanced availability, it says that we can rollback with no need for reboots? so does that mean that if theres a failure in the system, the mistake is corrected without it going down? and what do you mean when you say the process can be proactive (preventive hardware maintenance)?
+
+
+in the Isolation of Services benefit i didnt understand the first bullet point.
+
+
+during live migration the dirty files are created by the source VM or the Target? and in the end is the source VM killed?
+
+when the target VM starts running, for a brief moment of time does the source and target VM run at the same time?
+
+
+What are the drawbacks of virtualization?
+
+INTEROPERABILITY AND PORTABILITY AT THE VMM LEVEL?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________
+VIRTUALIZATION - NETWORK
+________________________________________________________________________
+
+in the slides (page 3) it says that internal virtualization provides networking capabilities to software containers on a single server? is it just containers or can it be vm's as well?
+
+
+
+***************************************
+what is a private network?
+whats the difference between a PN an LAN?
+*****************************************
+
+
+
+

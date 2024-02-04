@@ -1,0 +1,92 @@
+baseURL = 'https://www.1nuno.com'
+defaultContentLanguage = "pt"
+defaultContentLanguageInSubdir = true
+theme = 'hermit-v2'
+relatedPosts = true
+code_copy_button = true
+homeSubtitlePrinter = true
+scrollToTop = true
+
+
+[languages]
+
+  [languages.pt]
+    title = '1nuno'
+    languageCode = 'pt-PT'
+    languageName = '🇵🇹'
+    weight = 1
+
+    [[languages.pt.menu.main]]
+        name = "Sobre"
+        url = "about-1nuno/"
+        weight = 10
+
+    [[languages.pt.menu.main]]
+        name = "Posts"
+        url = "posts/"
+        weight = 20
+
+    [languages.pt.params]
+      homeSubtitle = "Aqui partilho o que aprendo sobre AI e as minhas auto-reflexões."
+      readTimeSeparator = "\u2026 \u23F2 Tempo de Leitura:"
+
+  [languages.en]
+    weight = 2
+    title = '1nuno'
+    languageCode = 'en-US'
+    languageName = '🇺🇸'
+
+    [[languages.en.menu.main]]
+        name = "About"
+        url = "about-1nuno/"
+        weight = 10
+
+    [[languages.en.menu.main]]
+        name = "Posts"
+        url = "posts/"
+        weight = 20
+
+    [languages.en.params]
+      homeSubtitle = "Here I share what i learn about AI and my own self-reflexions."
+      readTimeSeparator = "\u2026 \u23F2 Reading Time:"
+
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
+  justifyContent = false
+  relatedPosts = true
+  code_copy_button = true
+  homeSubtitlePrinter = true
+  scrollToTop = true 
+  global_mathjax = false
+  readTime = true
+  shareSocial = false
+  #homeSubtitle = "Continuing Hermit's legacy to be minimal and fast theme"
+  # bgImg = ""
+  # gitUrl = "https://github.com/1bl4z3r/hermit-V2/tree/staging"
+  # legacyLayout = false
+  # googleTagManager = "GTM-XXXXXXXX"
+
+  [[params.socialLinks]]
+    name = "github"
+    url = "https://github.com/1nuno"
+  
+  [[params.socialLinks]]
+    name = "linkedIn"
+    url = "https://www.linkedin.com/in/1nuno/"
+
+  [[params.socialLinks]]
+    name = "email"
+    url = "mailto:1nuno1nuno1@gmail.com"
+
+
+[taxonomies]
+  tag = "tags"
+
+
+[params.author]
+  name = "1nuno"
+  about = "about-1nuno"

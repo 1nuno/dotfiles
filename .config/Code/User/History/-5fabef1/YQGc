@@ -1,0 +1,6 @@
+FROM python:latest
+RUN pip install scrapy
+WORKDIR /usr/src/scraper
+COPY tjsc ./tjsc
+WORKDIR /usr/src/scraper/tjsc/tjsc
+CMD scrapy crawl tjsc -s JOBDIR=crawl -o /usr/src/scraper/data/tjsc_82_18.json

@@ -1,0 +1,12 @@
+2024-01-31 13:19:48.228 [info] Experiment 'pythonRecommendTensorboardExt' is active
+2024-01-31 13:19:48.228 [info] Experiment 'pythonREPLSmartSend' is active
+2024-01-31 13:19:48.228 [info] Experiment 'pythonSurveyNotification' is active
+2024-01-31 13:19:48.228 [info] Experiment 'pythonTerminalEnvVarActivationcf' is active
+2024-01-31 13:19:48.228 [info] Experiment 'pythonTestAdapter' is active
+2024-01-31 13:19:48.295 [info] Default formatter is set to ms-python.black-formatter for workspace /home/1nuno/Desktop/tokenizers
+2024-01-31 13:19:48.306 [info] Test server listening.
+2024-01-31 13:19:48.315 [info] Python interpreter path: /bin/python
+2024-01-31 13:19:48.985 [info] > conda info --json
+2024-01-31 13:19:49.125 [info] > /usr/share/anaconda/bin/conda info --json
+2024-01-31 13:19:50.044 [info] Starting Pylance language server.
+2024-01-31 21:16:26.829 [info] Discover tests for workspace name: undefined - uri: /home/1nuno/Desktop/professional/byTheLaw/organizar_depois/pgdl/scrape_links.py

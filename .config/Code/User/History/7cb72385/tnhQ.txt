@@ -1,0 +1,12 @@
+tem que ter o ffmpeg instalado para conseguir correr as animacoes.
+
+alterar bg de jupyter %widget:
+https://stackoverflow.com/questions/71206490/make-matplotlib-widget-background-color-match-dark-theme-in-visual-studio-code
+
+alterar o grafico interarivo do principal para ficar como o slider_scipt.py (alterei o tamanho dos tracinhos)
+
+fazer a analise dos outliers injectors e explicar quando usar cada um deles. (zscore para distribuicoes normais e iqr pra o resto seque)
+
+como encontrar o melhor p no 3.11?
+
+aplicar o kolmogorov smirinoff nos residuals

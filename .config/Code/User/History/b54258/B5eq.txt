@@ -1,0 +1,5 @@
+falar da normalizacao que fizemos
+
+falar das estrategias de concurrencia aplicadas
+
+the sort is currently for any column and this might be a problem

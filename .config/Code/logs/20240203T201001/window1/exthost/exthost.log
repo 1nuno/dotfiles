@@ -1,0 +1,15 @@
+2024-02-03 20:10:02.587 [info] Extension host with pid 3109 started
+2024-02-03 20:10:02.587 [info] Skipping acquiring lock for /home/1nuno/.config/Code/User/workspaceStorage/f34d6a63e5f4fd58a16b7fcd8980b3b0.
+2024-02-03 20:10:02.630 [info] ExtensionService#_doActivateExtension mechatroner.rainbow-csv, startup: false, activationEvent: 'onLanguage:plaintext'
+2024-02-03 20:10:02.636 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-02-03 20:10:03.607 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-02-03 20:10:03.628 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-02-03 20:10:03.645 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-02-03 20:10:03.704 [info] ExtensionService#_doActivateExtension ms-python.python, startup: true, activationEvent: 'workspaceContains:*.py', root cause: ms-python.black-formatter
+2024-02-03 20:10:03.841 [info] ExtensionService#_doActivateExtension ms-python.black-formatter, startup: true, activationEvent: 'workspaceContains:*.py'
+2024-02-03 20:10:03.878 [info] Eager extensions activated
+2024-02-03 20:10:03.894 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-02-03 20:10:03.896 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-02-03 20:10:03.928 [info] ExtensionService#_doActivateExtension ms-python.vscode-pylance, startup: false, activationEvent: 'api', root cause: ms-python.python
+2024-02-03 20:12:29.278 [info] Extension host terminating: renderer closed the MessagePort
+2024-02-03 20:12:29.299 [info] Extension host with pid 3109 exiting with code 0

@@ -1,0 +1,191 @@
+version: "3.8"
+services:
+  zookeeper:
+    image: bitnami/zookeeper:latest
+    container_name: zookeeper
+    restart: on-failure
+    networks:
+      - kafka-net
+    volumes:
+      - zookeeper-data:/bitnami/zookeeper
+    environment: 
+      ALLOW_ANONYMOUS_LOGIN: yes
+    healthcheck:
+      test: nc -z localhost 2181 || exit -1
+      interval: 4s
+      timeout: 3s
+      retries: 15
+
+  kafka:
+    image: bitnami/kafka:latest
+    container_name: kafka
+    restart: on-failure
+    networks:
+      - kafka-net
+    volumes:
+    - kafka-data:/bitnami/kafka
+    environment: 
+      ALLOW_PLAINTEXT_LISTENER: yes
+      KAFKA_CFG_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_CFG_LISTENERS: CLIENT://:9092,EXTERNAL://:9093
+      KAFKA_CFG_ADVERTISED_LISTENERS: CLIENT://kafka:9092,EXTERNAL://kafka:9093
+      KAFKA_CFG_INTER_BROKER_LISTENER_NAME: CLIENT
+    ports:
+      - "9093:9093"
+    healthcheck:
+      test: ["CMD", "kafka-topics.sh", "--list", "--bootstrap-server", "kafka:9093"]
+      interval: 30s
+      timeout: 30s
+      retries: 5
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+
+  temp1:
+    build: ./producerN
+    image: temp1
+    container_name: temp1
+    restart: on-failure
+    networks:
+      - kafka-net
+    environment:
+      MEAN: 30
+      STD: 15
+      LOWER: -5
+      UPPER: 45
+      SLEEP: 5
+      TOPIC_NAME: ${topic1}
+      MESUREMENT: sTemperature
+      LOCATION_TAG: living_room
+      FIELD_NAME: temp1
+    depends_on:
+      kafka:
+        condition: service_healthy
+    
+  temp2:
+    build: ./producerN
+    image: temp2
+    container_name: temp2
+    restart: on-failure
+    networks:
+      - kafka-net
+    environment:
+      MEAN: 15
+      STD: 5
+      LOWER: -5
+      UPPER: 45
+      SLEEP: 5
+      TOPIC_NAME: ${topic1}
+      MESUREMENT: sTemperature
+      LOCATION_TAG: main_room
+      FIELD_NAME: temp2
+    depends_on:
+      kafka:
+        condition: service_healthy
+  
+  humidity:
+    build: ./producerN
+    image: humidity
+    container_name: humidity
+    restart: on-failure
+    networks:
+      - kafka-net
+    environment:
+      MEAN: 50
+      STD: 20
+      LOWER: 0
+      UPPER: 100
+      SLEEP: 5
+      TOPIC_NAME: ${topic2}
+      MESUREMENT: sHumidity
+      LOCATION_TAG: living_room
+      FIELD_NAME: humidity
+    depends_on:
+      kafka:
+        condition: service_healthy
+
+  aiq:
+    build: ./producerN
+    image: aiq
+    container_name: AIQ
+    restart: on-failure
+    networks:
+      - kafka-net
+    environment:
+      MEAN: 80
+      STD: 50
+      LOWER: 0
+      UPPER: 200
+      SLEEP: 5
+      TOPIC_NAME: ${topic3}
+      MESUREMENT: sAirQuality
+      LOCATION_TAG: living_room_main_room_corridor
+      FIELD_NAME: AIQ
+    depends_on:
+      kafka:
+        condition: service_healthy
+
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    restart: on-failure
+    ports:
+      - "8086:8086"
+    volumes:
+      - influx-data:/var/lib/influxdb
+    networks:
+      - tick-net
+    environment: 
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: admin
+      DOCKER_INFLUXDB_INIT_PASSWORD: password
+      DOCKER_INFLUXDB_INIT_ORG: sic
+      DOCKER_INFLUXDB_INIT_BUCKET: tp2
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: LRk4Qb4QtnFqdn83kYDG-1EXsNRkhFGrdZqJQhfy2IOTN7IIyVhWdwEu8PeKlvhXDHomucMZVOpE7tAPLSx0xQ==
+    healthcheck:
+      test: "curl -f http://influxdb:8086/ping"
+      interval: 5s
+      timeout: 10s
+      retries: 5
+
+  telegraf:
+    image: telegraf:latest
+    container_name: telegraf
+    user: telegraf:${telegraf_gid}
+    restart: on-failure
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+     - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
+    networks:
+     - kafka-net
+     - tick-net
+    env_file:
+       - '.env'
+    healthcheck:
+      test: "curl -f http://localhost:9090"
+      interval: 5s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      kafka:
+        condition: service_healthy
+      influxdb:
+        condition: service_healthy
+
+volumes:
+  influx-data:
+    name: influx-data
+    driver: local
+  zookeeper-data:
+    name: zookeeper-data
+    driver: local
+  kafka-data:
+    name: kafka-data
+    driver: local
+
+networks:
+  kafka-net:
+    name: kafka-net
+  tick-net:
+    name: tick-net

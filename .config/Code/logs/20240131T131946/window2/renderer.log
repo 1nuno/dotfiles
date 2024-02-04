@@ -1,0 +1,9 @@
+2024-02-01 01:03:52.964 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.python' wants API proposal 'registerIssueDataProvider' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2024-02-01 01:03:53.165 [info] Started local extension host with pid 176059.
+2024-02-01 01:03:53.198 [info] Placing extension(s) vscodevim.vim on a separate extension host.
+2024-02-01 01:03:53.308 [info] Started local extension host with pid 176074.
+2024-02-01 01:03:56.015 [info] [perf] Render performance baseline is 157ms
+2024-02-01 01:08:07.895 [info] Started local extension host with pid 176821.
+2024-02-01 01:08:07.895 [info] Started local extension host with pid 176822.
+2024-02-01 01:08:31.254 [info] [lifecycle]: Shutdown was prevented (id: veto.untitledWorkspace)
+2024-02-01 10:51:26.542 [info] [lifecycle]: Shutdown was prevented (id: veto.untitledWorkspace)

@@ -1,0 +1,8 @@
+introducao
+
+anatomia de um endpoint
+
+funcoes de auxilio e variaveis globais
+
+
+

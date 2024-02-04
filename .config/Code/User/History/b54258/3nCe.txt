@@ -1,0 +1,3 @@
+falar da normalizacao que fizemos
+
+falar das estrategias de concurrencia aplicadas

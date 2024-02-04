@@ -1,0 +1,16 @@
+2024-02-01 10:52:07.677 [info] Experiment 'pythonRecommendTensorboardExt' is active
+2024-02-01 10:52:07.677 [info] Experiment 'pythonREPLSmartSend' is active
+2024-02-01 10:52:07.677 [info] Experiment 'pythonSurveyNotification' is active
+2024-02-01 10:52:07.677 [info] Experiment 'pythonTerminalEnvVarActivationcf' is active
+2024-02-01 10:52:07.677 [info] Experiment 'pythonTestAdapter' is active
+2024-02-01 10:52:07.677 [info] Default formatter is set to ms-python.black-formatter for workspace /home/1nuno/Desktop/learn_c
+2024-02-01 10:52:07.677 [info] Test server listening.
+2024-02-01 10:52:07.677 [info] Python interpreter path: /bin/python
+2024-02-01 10:52:07.689 [warning] Retry failed, storage update failed for key PYTHON_GLOBAL_STORAGE_KEYS
+2024-02-01 10:52:07.689 [warning] Retry failed, storage update failed for key PYTHON_GLOBAL_STORAGE_KEYS
+2024-02-01 10:52:07.689 [warning] Retry failed, storage update failed for key PYTHON_WORKSPACE_STORAGE_KEYS
+2024-02-01 10:52:07.689 [warning] Retry failed, storage update failed for key PYTHON_WORKSPACE_STORAGE_KEYS
+2024-02-01 10:52:07.689 [warning] Retry failed, storage update failed for key PYTHON_WORKSPACE_STORAGE_KEYS
+2024-02-01 10:52:07.698 [info] > /bin/python -I ~/.vscode/extensions/ms-python.python-2023.22.1/pythonFiles/get_output_via_markers.py ~/.vscode/extensions/ms-python.python-2023.22.1/pythonFiles/interpreterInfo.py
+2024-02-01 10:52:08.958 [info] Starting Pylance language server.
+2024-02-01 10:53:03.831 [info] Discover tests for workspace name: undefined - uri: /home/1nuno/.config/Code/User/settings.json

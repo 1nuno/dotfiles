@@ -1,0 +1,2 @@
+docker run -d --name kafka-zookeeper --network kafka-network -e ALLOW_ANONYMOUS_LOGIN=yes bitnami/zookeeper:latest
+

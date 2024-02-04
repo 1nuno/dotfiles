@@ -1,0 +1,3 @@
+docker network create global-network
+
+docker run -dit --name mariadb --network global-network -e MARIADB_ROOT_PASSWORD=my-secret-pw -e MARIADB_DATABASE=sic -v /home/1nuno/Desktop:/var/lib/mysql -v /home/SIC-1/exercice1/default_table.sql:/docker-entrypoint-initdb.d/default_table.sql mariadb:latest

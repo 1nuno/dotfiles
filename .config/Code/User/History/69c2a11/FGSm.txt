@@ -1,0 +1,10 @@
+introducao
+
+requirements (bibliotecas, linguagem de programacao e aplicativo para testar a api)
+
+anatomia de um endpoint
+
+funcoes de auxilio e variaveis globais
+
+
+

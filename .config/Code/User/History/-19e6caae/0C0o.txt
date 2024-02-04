@@ -1,0 +1,10 @@
+docker network create global-network
+
+docker run -dit --name mariadb --network global-network -e MARIADB_ROOT_PASSWORD=my-secret-pw -e MARIADB_DATABASE=sic -v /home/SIC-1/exercice1/persistance-data:/var/lib/mysql -v /home/SIC-1/exercice1/table.sql:/docker-entrypoint-initdb.d/table.sql mariadb:latest
+
+
+docker run -dit --name phpmyadmin --network global-network -e PMA_HOST=mariadb -p 8080:80 phpmyadmin
+
+
+./step-by-step/rabbitmq-setup.sh
+

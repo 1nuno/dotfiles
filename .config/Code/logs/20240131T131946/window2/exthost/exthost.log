@@ -1,0 +1,43 @@
+2024-02-01 01:03:53.491 [info] Extension host with pid 176059 started
+2024-02-01 01:03:53.517 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-02-01 01:03:53.522 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-02-01 01:03:53.544 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-02-01 01:03:53.573 [info] Extension host with pid 176074 started
+2024-02-01 01:03:53.585 [info] Eager extensions activated
+2024-02-01 01:03:53.592 [info] ExtensionService#_doActivateExtension vscodevim.vim, startup: false, activationEvent: 'onStartupFinished'
+2024-02-01 01:03:53.603 [info] Eager extensions activated
+2024-02-01 01:03:53.618 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-02-01 01:03:53.621 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-02-01 01:08:01.709 [info] ExtensionService#_doActivateExtension rlivings39.fzf-quick-open, startup: false, activationEvent: 'onCommand:fzf-quick-open.runFzfAddWorkspaceFolder'
+2024-02-01 01:08:07.692 [info] Extension host terminating: renderer closed the MessagePort
+2024-02-01 01:08:07.694 [info] Extension host terminating: renderer closed the MessagePort
+2024-02-01 01:08:07.694 [info] Extension host with pid 176074 exiting with code 0
+2024-02-01 01:08:07.707 [info] Extension host with pid 176059 exiting with code 0
+2024-02-01 01:08:08.146 [info] Extension host with pid 176821 started
+2024-02-01 01:08:08.146 [info] Skipping acquiring lock for /home/1nuno/.config/Code/User/workspaceStorage/c8c3f7728ea5dbb76d11ba9d2155949d.
+2024-02-01 01:08:08.161 [info] Extension host with pid 176822 started
+2024-02-01 01:08:08.161 [info] Skipping acquiring lock for /home/1nuno/.config/Code/User/workspaceStorage/c8c3f7728ea5dbb76d11ba9d2155949d.
+2024-02-01 01:08:08.163 [info] Eager extensions activated
+2024-02-01 01:08:08.170 [info] ExtensionService#_doActivateExtension rlivings39.fzf-quick-open, startup: false, activationEvent: 'onCommand:fzf-quick-open.runFzfAddWorkspaceFolder'
+2024-02-01 01:08:08.172 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: false, activationEvent: '*', root cause: vscode.git
+2024-02-01 01:08:08.178 [info] ExtensionService#_doActivateExtension vscodevim.vim, startup: false, activationEvent: 'onStartupFinished'
+2024-02-01 01:08:08.197 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: '*'
+2024-02-01 01:08:08.222 [info] ExtensionService#_doActivateExtension vscode.github, startup: false, activationEvent: '*'
+2024-02-01 01:08:08.311 [info] Eager extensions activated
+2024-02-01 01:08:08.311 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-02-01 01:08:08.313 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-02-01 01:08:23.039 [info] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onTerminalQuickFixRequest:ms-vscode.npm-command'
+2024-02-01 10:47:54.249 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-02-01 10:52:07.466 [info] ExtensionService#_doActivateExtension ms-vscode.js-debug, startup: false, activationEvent: 'onDebugInitialConfigurations'
+2024-02-01 10:52:07.543 [info] ExtensionService#_doActivateExtension ms-python.python, startup: false, activationEvent: 'onDebugInitialConfigurations'
+2024-02-01 10:52:07.745 [info] ExtensionService#_doActivateExtension ms-python.vscode-pylance, startup: false, activationEvent: 'api', root cause: ms-python.python
+2024-02-01 10:52:10.736 [info] ExtensionService#_doActivateExtension mechatroner.rainbow-csv, startup: false, activationEvent: 'onLanguage:plaintext'
+2024-02-01 10:52:10.740 [info] ExtensionService#_doActivateExtension vscode.debug-server-ready, startup: false, activationEvent: 'onDebugResolve'
+2024-02-01 10:52:31.022 [info] ExtensionService#_doActivateExtension ms-vscode.cpptools, startup: false, activationEvent: 'onLanguage:c'
+2024-02-01 10:53:03.516 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-02-01 10:53:03.532 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-02-01 11:00:51.544 [warning] ms-vscode.cpptools - Code actions of kind 'quickfix 'requested but returned code action is of kind 'refactor.extract.function'. Code action will be dropped. Please check 'CodeActionContext.only' to only return requested code actions.
+2024-02-01 12:15:33.498 [info] Extension host terminating: renderer closed the MessagePort
+2024-02-01 12:15:33.498 [info] Extension host terminating: renderer closed the MessagePort
+2024-02-01 12:15:33.507 [info] Extension host with pid 176822 exiting with code 0
+2024-02-01 12:15:33.594 [info] Extension host with pid 176821 exiting with code 0

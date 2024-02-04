@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb
+    restart: on-failure
+    environment:
+      MARIADB_ROOT_PASSWORD: my-secret-pw
+      MARIADB_DATABASE: sic
+    volumes:
+      - ./persistance-data:/var/lib/mysql
+      - ./table.sql:/docker-entrypoint-initdb.d/table.sql
+    networks:
+      - global-network
+
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: on-failure
+    environment:
+      - PMA_HOST=mariadb
+    ports:
+      - "8079:80"
+    networks:
+      - global-network
+
+
+  phpmyadmin:
+      build: ./rabbitmq
+      image: rabbitmq:mvp1
+      container_name: phpmyadmin
+      restart: on-failure
+      environment:
+        - PMA_HOST=mariadb
+      ports:
+        - "8079:80"
+      networks:
+        - global-network
+
+networks:
+  global-network:
+    driver: bridge

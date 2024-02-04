@@ -1,0 +1,56 @@
+(slide T01, pag.17) what exactly are these so called procedures and standards that the dbms admin writes to the end users?
+
+also what does the sys admin do? order the dbms admin?
+
+
+(slide T01, pag.20) I understand all the problems that came with the old ways of doing things but im still wondering what does it mean by "need to write a new program to carry out each new task" doesnt that still apply for modern databases where we have to write new queries each time?
+
+Also what does that "account balance > 0" in the integrity problems mean?
+
+"hard to add new constraints or chage existing ones"? how would we go about adding constraints?
+my guess is, each program would have to implement the constraints themselves right? this way every application that feeds from that same data base would have different implementations of the a program to represent the same constraints which would hurt the standarization of the program? 
+
+
+(slide T01, pag.26) In the view level it talks about aplication programs hiding details, this so called application programs are out of the box features that come with the DBMS itself or are we talking about externel apis?
+
+the way im thinking about the view level is that each view is a composition of different permission levels from both the physical and logical level...is this correct?
+
+in the example provided (hiding the salary of the teacher) is considered an abstraction of the physical level and not the logical right?
+
+what would be an example of a logical level abstraction?
+
+If my idea of view is correct, then each view is defined during the execution of the DDL right? (it says on pag.29 that authorization is defined on DDL thats why im asking).
+
+
+(slide T01, pag.28) So this physical data independence relates to the last class (normalization) in the sense that after we generate our database based on our ER we possibily still need to tweak (normalize) our physical system, and those tweaks may not influence the logical design is that right?
+
+I also didnt quite understood the two points mentioned in this slide:
+
+	- Applications depend on the logical schema:
+		
+		does this mean that the aplications should ONLY depend on the logical schema in the sense that api's
+		dont need to change their code when theres physical independence?
+
+	- In general, the interfaces between the various......:
+
+		I dont understand what message is this point trying to convey...
+
+
+(slide T01, pag.29) i searched the following sentence from the slide "DDL compiler generates a set of table templates stored in a data dictionary" and found this link on stackoverflow:
+
+https://stackoverflow.com/questions/24394081/how-is-a-data-dictionary-table-stored-in-memory
+
+Sooo.... DDL PROCESSOR or DDL COMPILER?
+
+about the data dictionary....is it something extra that stores info about the tables we created or is it something that its used to create the tables?
+
+Just to make sure, when we say database schema in the context of DDLs we are talking about the PHYSICAL schema right?
+
+(slide T01, pag.30) it says that the portion of a dml that involves information retrieveal is called query language...what about insertions?
+
+search difference between orms and odbc/jdbc
+
+(slide 32) pgadmin is considered an aplication program?
+
+
+

@@ -1,0 +1,16 @@
+perguntar se os volumes sao so no influx
+
+zookeeper precisa de volumes?
+
+o kafka precisa de volumes?
+
+
+nao esquecer: add restarts on failure or whatever
+
+o consumer ta a receber mensagens num formato estranho, com espacos, identacoes nao definidas no codigo...
+
+adicionar health checks ao influxdb
+
+Add .env variables to telegraph config (topics)
+
+$(stat -c '%g' /var/run/docker.sock) - nao sei como fazer isso no compose

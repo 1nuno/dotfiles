@@ -1,0 +1,1 @@
+e possivel quebrar a primeira condicao pra ser view serializable?

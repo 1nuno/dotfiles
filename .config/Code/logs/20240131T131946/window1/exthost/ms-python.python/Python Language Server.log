@@ -1,0 +1,18 @@
+2024-01-31 13:19:49.498 [info] (Client) Pylance async client (2023.12.1) started with python extension (2023.22.1)
+2024-01-31 13:19:50.028 [info] [Info  - 1:19:50 PM] (129764) Pylance language server 2023.12.1 (pyright a78e2b10) starting
+2024-01-31 13:19:50.028 [info] [Info  - 1:19:50 PM] (129764) Server root directory: /home/1nuno/.vscode/extensions/ms-python.vscode-pylance-2023.12.1/dist
+2024-01-31 13:19:50.028 [info] [Info  - 1:19:50 PM] (129764) Starting service instance "tokenizers"
+2024-01-31 13:19:50.062 [info] [Info  - 1:19:50 PM] (129764) Setting pythonPath for service "tokenizers": "/bin/python"
+2024-01-31 13:19:50.062 [info] [Info  - 1:19:50 PM] (129764) Setting environmentName for service "tokenizers": "3.11.7 (global)"
+2024-01-31 13:19:50.089 [info] [Info  - 1:19:50 PM] (129764) Assuming Python version 3.11
+2024-01-31 13:19:50.163 [info] [Info  - 1:19:50 PM] (129764) Found 1 source file
+2024-02-01 10:52:30.976 [info] [Error - 10:52:30 AM] Server process exited with code 0.
+2024-02-01 10:52:31.422 [info] (Client) Pylance async client (2023.12.1) started with python extension (2023.22.1)
+2024-02-01 10:52:32.025 [info] [Info  - 10:52:32 AM] (185965) Pylance language server 2023.12.1 (pyright a78e2b10) starting
+2024-02-01 10:52:32.026 [info] [Info  - 10:52:32 AM] (185965) Server root directory: /home/1nuno/.vscode/extensions/ms-python.vscode-pylance-2023.12.1/dist
+2024-02-01 10:52:32.033 [info] [Info  - 10:52:32 AM] (185965) Starting service instance "tokenizers"
+2024-02-01 10:52:32.069 [info] [Info  - 10:52:32 AM] (185965) Setting pythonPath for service "tokenizers": "/bin/python"
+2024-02-01 10:52:32.069 [info] [Info  - 10:52:32 AM] (185965) Setting environmentName for service "tokenizers": "3.11.7 (global)"
+2024-02-01 10:52:32.109 [info] [Info  - 10:52:32 AM] (185965) Assuming Python version 3.11
+2024-02-01 10:52:32.174 [info] [Error - 10:52:32 AM] (185965) File or directory "/home/1nuno/Desktop/tokenizers" does not exist.
+2024-02-01 10:52:32.174 [info] [Info  - 10:52:32 AM] (185965) No source files found.

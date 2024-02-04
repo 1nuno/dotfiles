@@ -1,0 +1,10 @@
+introducao
+
+requirements (bibliotecas, linguagem de programacao,)
+
+anatomia de um endpoint
+
+funcoes de auxilio e variaveis globais
+
+
+

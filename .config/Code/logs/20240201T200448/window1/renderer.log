@@ -1,0 +1,7 @@
+2024-02-01 20:04:49.568 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.python' wants API proposal 'registerIssueDataProvider' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2024-02-01 20:04:49.612 [info] Initial editor state {"filesToOpenOrCreate":[{"fileUri":{"$mid":1,"path":"/home/1nuno/Desktop/mitteny/Drawing.json","scheme":"file"},"type":1,"exists":true,"options":{}}],"filesToDiff":[],"filesToMerge":[]}
+2024-02-01 20:04:49.723 [warning] Ignoring the error while validating workspace folder file:///home/1nuno/Desktop/tokenizers - Error: ENOENT: no such file or directory, stat '/home/1nuno/Desktop/tokenizers'
+2024-02-01 20:04:49.907 [info] Started local extension host with pid 231621.
+2024-02-01 20:04:50.243 [info] Ignoring configured affinity for 'vscodevim.vim' because extension host(s) are already running. Reload window.
+2024-02-01 20:04:50.265 [info] Placing extension(s) vscodevim.vim on a separate extension host.
+2024-02-01 20:04:50.778 [info] Started local extension host with pid 231672.

@@ -1,0 +1,47 @@
+2024-01-31 13:19:46.658 [info] update#setState idle
+2024-01-31 13:20:16.659 [info] update#setState checking for updates
+2024-01-31 13:20:16.717 [info] update#setState idle
+2024-01-31 14:20:16.674 [info] update#setState checking for updates
+2024-01-31 14:20:16.931 [info] update#setState idle
+2024-01-31 15:20:16.691 [info] update#setState checking for updates
+2024-01-31 15:20:16.814 [info] update#setState idle
+2024-01-31 16:20:16.705 [info] update#setState checking for updates
+2024-01-31 16:20:16.836 [info] update#setState idle
+2024-01-31 18:46:56.885 [warning] No ptyHost heartbeat after 6 seconds
+2024-01-31 19:42:34.756 [info] update#setState checking for updates
+2024-01-31 19:42:34.890 [info] update#setState idle
+2024-01-31 20:42:34.769 [info] update#setState checking for updates
+2024-01-31 20:42:34.907 [info] update#setState idle
+2024-01-31 21:42:34.774 [info] update#setState checking for updates
+2024-01-31 21:42:34.886 [info] update#setState idle
+2024-01-31 22:42:34.776 [info] update#setState checking for updates
+2024-01-31 22:42:34.885 [info] update#setState idle
+2024-01-31 23:42:34.777 [info] update#setState checking for updates
+2024-01-31 23:42:35.046 [info] update#setState idle
+2024-02-01 00:42:34.788 [info] update#setState checking for updates
+2024-02-01 00:42:34.919 [info] update#setState idle
+2024-02-01 01:08:07.695 [info] Extension host with pid 176074 exited with code: 0, signal: unknown.
+2024-02-01 01:08:07.707 [info] Extension host with pid 176059 exited with code: 0, signal: unknown.
+2024-02-01 01:42:34.798 [info] update#setState checking for updates
+2024-02-01 01:42:34.921 [info] update#setState idle
+2024-02-01 02:42:34.800 [info] update#setState checking for updates
+2024-02-01 02:42:35.048 [info] update#setState idle
+2024-02-01 03:42:34.805 [info] update#setState checking for updates
+2024-02-01 03:42:34.922 [info] update#setState idle
+2024-02-01 04:42:34.810 [info] update#setState checking for updates
+2024-02-01 04:42:34.922 [info] update#setState idle
+2024-02-01 05:42:34.814 [info] update#setState checking for updates
+2024-02-01 05:42:35.064 [info] update#setState idle
+2024-02-01 06:42:34.817 [info] update#setState checking for updates
+2024-02-01 06:42:34.931 [info] update#setState idle
+2024-02-01 07:42:34.821 [info] update#setState checking for updates
+2024-02-01 07:42:34.949 [info] update#setState idle
+2024-02-01 08:42:34.832 [info] update#setState checking for updates
+2024-02-01 08:42:34.957 [info] update#setState idle
+2024-02-01 11:26:21.453 [info] update#setState checking for updates
+2024-02-01 11:26:21.579 [info] update#setState available for download
+2024-02-01 12:15:33.508 [info] Extension host with pid 176822 exited with code: 0, signal: unknown.
+2024-02-01 12:15:33.595 [info] Extension host with pid 176821 exited with code: 0, signal: unknown.
+2024-02-01 12:41:26.138 [info] Extension host with pid 129298 exited with code: 0, signal: unknown.
+2024-02-01 12:41:26.160 [error] [UtilityProcess id: 1, type: fileWatcher, pid: 129245]: crashed with code 15 and reason 'killed'
+2024-02-01 12:41:26.181 [info] Extension host with pid 129267 exited with code: 0, signal: unknown.

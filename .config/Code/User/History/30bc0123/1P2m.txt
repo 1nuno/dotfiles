@@ -1,0 +1,8 @@
+perguntar se os volumes sao so no influx
+
+zookeeper precisa de volumes?
+
+o kafka precisa de volumes?
+
+
+nao esquecer: add restarts on failure or whatever

@@ -1,0 +1,59 @@
+2024-02-03 17:55:20.196 [info] Name: Black Formatter
+2024-02-03 17:55:20.196 [info] Module: black
+2024-02-03 17:55:20.196 [info] Default formatter is set to ms-python.black-formatter for workspace /home/1nuno/Desktop/personal
+2024-02-03 17:55:20.196 [info] Python extension loading
+2024-02-03 17:55:20.196 [info] Waiting for interpreter from python extension.
+2024-02-03 17:55:20.196 [info] No interpreter found from setting black-formatter.interpreter
+2024-02-03 17:55:20.196 [info] Getting interpreter from ms-python.python extension for workspace /home/1nuno/Desktop/personal
+2024-02-03 17:55:20.196 [info] Python extension loaded
+2024-02-03 17:55:20.196 [info] Interpreter from ms-python.python extension for /home/1nuno/Desktop/personal: /bin/python
+2024-02-03 17:55:20.196 [info] No interpreter found from setting black-formatter.interpreter
+2024-02-03 17:55:20.196 [info] Getting interpreter from ms-python.python extension for workspace /home/1nuno/Desktop/personal
+2024-02-03 17:55:20.196 [info] Interpreter from ms-python.python extension for /home/1nuno/Desktop/personal: /bin/python
+2024-02-03 17:55:20.196 [info] Server run command: /bin/python /home/1nuno/.vscode/extensions/ms-python.black-formatter-2024.0.0/bundled/tool/lsp_server.py
+2024-02-03 17:55:20.196 [info] Server: Start requested.
+2024-02-03 17:55:20.711 [info] CWD Server: /home/1nuno/Desktop/personal
+2024-02-03 17:55:20.714 [info] /bin/python -m black --version
+2024-02-03 17:55:20.714 [info] CWD formatter: /home/1nuno/Desktop/personal
+2024-02-03 17:55:20.867 [info] Version info for formatter running for /home/1nuno/Desktop/personal:
+black, 24.1.1 (compiled: no)
+Python (CPython) 3.11.7
+
+2024-02-03 17:55:20.867 [info] SUPPORTED black>=22.3.0
+FOUND black==24.1.1
+
+2024-02-03 17:55:20.867 [info] Settings used to run Server:
+[
+    {
+        "cwd": "/home/1nuno/Desktop/personal",
+        "workspace": "file:///home/1nuno/Desktop/personal",
+        "args": [],
+        "path": [],
+        "interpreter": [
+            "/bin/python"
+        ],
+        "importStrategy": "useBundled",
+        "showNotifications": "off"
+    }
+]
+
+2024-02-03 17:55:20.867 [info] Global settings:
+{
+    "cwd": "/home/1nuno",
+    "workspace": "/home/1nuno",
+    "args": [],
+    "path": [],
+    "interpreter": [],
+    "importStrategy": "useBundled",
+    "showNotifications": "off"
+}
+
+2024-02-03 17:55:20.868 [info] sys.path used to run Server:
+   /home/1nuno/.vscode/extensions/ms-python.black-formatter-2024.0.0/bundled/libs
+   /home/1nuno/.vscode/extensions/ms-python.black-formatter-2024.0.0/bundled/tool
+   /usr/lib64/python311.zip
+   /usr/lib64/python3.11
+   /usr/lib64/python3.11/lib-dynload
+   /home/1nuno/.local/lib/python3.11/site-packages
+   /usr/lib64/python3.11/site-packages
+   /usr/lib/python3.11/site-packages
