@@ -33,7 +33,7 @@ return {
 					["<C-d>"] = cmp.mapping.scroll_docs(4),
 					--["<C-s>"] = cmp.mapping.complete(), --> this is for showing the completion in case its closed
 					["<C-w>"] = cmp.mapping.abort(), --> this is for closing the completion
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
+					["<CR>"] = cmp.mapping.confirm({ select = false }),
 				}),
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },

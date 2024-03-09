@@ -1,2 +1,0 @@
-# COOL VSCODE BROH
-

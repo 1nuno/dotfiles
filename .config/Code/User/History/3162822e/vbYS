@@ -1,8 +1,0 @@
-# Use an official Python base image
-FROM rabbitmq
-
-# Copy the required files from the VM to the container (docker) image
-# COPY rabbitmq.conf /etc/rabbitmq/rabbitmq.conf
-
-# Run app.py inside the image filesystem
-RUN rabbitmq-plugins --offline enable rabbitmq_management

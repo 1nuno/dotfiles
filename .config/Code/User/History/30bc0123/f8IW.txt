@@ -1,3 +1,0 @@
-perguntar se os volumes sao so no influx
-
-zookeeper precisa de volumes?

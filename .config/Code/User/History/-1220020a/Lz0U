@@ -1,4 +1,0 @@
-# Use an official Python base image
-FROM mariadb:latest
-
-

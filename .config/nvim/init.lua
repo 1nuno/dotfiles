@@ -12,4 +12,22 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("options")
 require("keymaps")
-require("lazy").setup("plugins")
+require("lazy").setup({
+
+	spec = {
+		{ import = "plugins" },
+	},
+	checker = {
+		enabled = true, -- automatically check for plugin updates
+		notify = false, -- get a notification when new updates are found
+	},
+
+	-- ui config
+	ui = {
+		border = "rounded",
+		size = {
+			width = 0.8,
+			height = 0.8,
+		},
+	},
+})

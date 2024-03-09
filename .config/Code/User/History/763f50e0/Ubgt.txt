@@ -1,4 +1,0 @@
-docker run -d --name kafka-zookeeper --network kafka-network -e ALLOW_ANONYMOUS_LOGIN=yes bitnami/zookeeper:latest
-
-docker run -d --name kafka --network kafka-network -e ALLOW_PLAINTEXT_LISTENER=yes -e KAFKA_CFG_ZOOKEEPER_CONNECT=kafka-zookeeper:2181 -e KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT -e KAFKA_CFG_LISTENERS=CLIENT://:9092,EXTERNAL://:9093 -e KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://kafka:9092,EXTERNAL://192.168.23.130:9093 -e KAFKA_CFG_INTER_BROKER_LISTENER_NAME=CLIENT -p 9092:9092 -p 9093:9093 
-bitnami/kafka:latest

@@ -1,3 +1,0 @@
-ver a cena do order by no ponto 5. ordenar algo ja ordenado afeta a performance?
-
-ainda no ponto 5 em vez de dar erro quando a categoria nao existe ele simplesmente nao retorna nada

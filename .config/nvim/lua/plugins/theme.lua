@@ -34,6 +34,11 @@
 -- 			})
 -- 			vim.cmd("colorscheme kanagawa-lotus")
 -- 		end,
+function LineNumberColors()
+    vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#758cbf', bold=false })
+    vim.api.nvim_set_hl(0, 'LineNr', { fg='#ffffff', bold=true })
+    vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#758cbf', bold=false })
+end
 return {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -48,8 +53,15 @@ return {
                 nvimtree = true,
                 treesitter = true,
                 telescope = true,
+            },
+            color_overrides = {
+                mocha = {
+                    overlay0 = "#9fb0c2"
+                },
             }
+
         })
         vim.cmd("colorscheme catppuccin")
+        LineNumberColors()
     end,
 }

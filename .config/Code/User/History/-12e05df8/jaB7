@@ -1,4 +1,0 @@
-telegraf_gid=996
-topic1=sh-temperature
-topic2=sh-humidity
-topic3=sh-AirQuality

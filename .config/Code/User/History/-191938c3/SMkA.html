@@ -1,9 +1,0 @@
-{{ with .Translations }}
-{{ range . }}
-{{ if eq .Language.Lang $.Language.Lang }}
-    <a class="active" aria-current="page" href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
-{{ else }}
-    <a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
-{{ end }}
-{{ end }}
-{{ end }}

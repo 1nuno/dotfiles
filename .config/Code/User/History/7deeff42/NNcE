@@ -1,9 +1,0 @@
-1. Create Item (POST)
-
-Uma simples query INSERT para adicionar um item na tabela
-
-
-
-2. Update Item (PUT)
-
-Uma simples query UPDATE para adicionar um item na tabela

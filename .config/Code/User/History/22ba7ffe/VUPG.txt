@@ -1,3 +1,0 @@
-proxySwitchyOmega - mental outlaw vim video
-
-https://discourse.gohugo.io/t/hugo-installed-with-a-snap-doesnt-work/6472/11 - hugo stuff

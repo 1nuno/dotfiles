@@ -25,4 +25,8 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- more magic from the primagen. paste without losing it from the registry.
 vim.keymap.set("v", "<Leader>p" , "\"_dP")
 
+vim.keymap.set("n", "<C-u>" , "<C-u>zz")
+vim.keymap.set("n", "<C-d>" , "<C-d>zz")
+
+
 

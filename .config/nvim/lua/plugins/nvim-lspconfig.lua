@@ -1,22 +1,21 @@
 return {
 	"neovim/nvim-lspconfig",
-	-- opts = {
-	-- 	capabilities = {
-	-- 		textDocument = {
-	-- 			foldingRange = {
-	-- 				dynamicRegistration = false,
-	-- 				lineFoldingOnly = true,
-	-- 			},
-	-- 		},
-	-- 	},
-	-- },
 	config = function()
 		local capabilities = require("cmp_nvim_lsp").default_capabilities() -- this is to enable completion to use our lsp
 		local lspconfig = require("lspconfig")
 		lspconfig.clangd.setup({
 			capabilities = capabilities, -- this is to enable completion to use our lsp
 		})
+		lspconfig.bashls.setup({
+			capabilities = capabilities, -- this is to enable completion to use our lsp
+		})
+		lspconfig.taplo.setup({
+			capabilities = capabilities, -- this is to enable completion to use our lsp
+		})
 		lspconfig.pyright.setup({
+			capabilities = capabilities, -- this is to enable completion to use our lsp
+		})
+		lspconfig.marksman.setup({
 			capabilities = capabilities, -- this is to enable completion to use our lsp
 		})
 		lspconfig.lua_ls.setup({

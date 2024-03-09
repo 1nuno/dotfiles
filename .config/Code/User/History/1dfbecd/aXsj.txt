@@ -1,8 +1,0 @@
-
-O que e um serializable schedule?
-
-um schedule S, composto pelo conjunto de transacoes T, diz-se serializable se existir para o mesmo conjunto T, outro schedule S' cujo seu efeito final a base de dados e igual ao do S.
-
-o que e um conflict serializable schedule?
-
-um schedule diz-se conflict serializable se 
