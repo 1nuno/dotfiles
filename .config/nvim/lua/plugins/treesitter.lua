@@ -1,20 +1,38 @@
 return {
+
+	{
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python", "markdown" },
+			local configs = require("nvim-treesitter.configs")
+			configs.setup({
+				ensure_installed = {
+					"bash",
+					"c",
+					"diff",
+					"html",
+					"javascript",
+					"typescript",
+					"jsdoc",
+					"json",
+					"jsonc",
+					"lua",
+					"luadoc",
+					"luap",
+					"markdown",
+					"markdown_inline",
+					"python",
+					"query",
+					"regex",
+					"toml",
+					"tsx",
+					"vim",
+					"vimdoc",
+					"xml",
+					"yaml",
+				},
 				auto_install = true,
 				highlight = {
 					enable = true,
-				},
-				incremental_selection = {
-					enable = true,
-					keymaps = {
-						init_selection = "gnn",
-						node_incremental = "grn",
-						scope_incremental = "grc",
-						node_decremental = "grm",
-					},
 				},
 				textobjects = {
 					select = {
@@ -37,5 +55,7 @@ return {
 				},
 			})
 		end,
-	}
+	},
 
+	{ "nvim-treesitter/nvim-treesitter-textobjects" },
+}

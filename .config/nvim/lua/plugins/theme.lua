@@ -1,67 +1,38 @@
--- return {
--- 		"rebelot/kanagawa.nvim",
--- 		config = function()
--- 			require("kanagawa").setup({
--- 				transparent = true,
--- 				overrides = function(colors)
--- 					local theme = colors.theme
--- 					return {
--- 						NormalFloat = { bg = "none" },
--- 						FloatBorder = { bg = "none" },
--- 						FloatTitle = { bg = "none" },
--- 						TelescopeTitle = { fg = theme.ui.special, bold = true },
--- 						TelescopePromptNormal = { bg = theme.ui.bg_p1 },
--- 						TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
--- 						TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
--- 						TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
--- 						TelescopePreviewNormal = { bg = theme.ui.bg_dim },
--- 						TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
--- 						Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency
--- 						PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
--- 						PmenuSbar = { bg = theme.ui.bg_m1 },
--- 						PmenuThumb = { bg = theme.ui.bg_p2 },
--- 					}
--- 				end,
--- 				colors = {
--- 					theme = {
--- 						all = {
--- 							ui = {
--- 								bg_gutter = "none",
--- 							},
--- 						},
--- 					},
--- 				},
--- 			})
--- 			vim.cmd("colorscheme kanagawa-lotus")
--- 		end,
-function LineNumberColors()
-    vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#758cbf', bold=false })
-    vim.api.nvim_set_hl(0, 'LineNr', { fg='#ffffff', bold=true })
-    vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#758cbf', bold=false })
-end
 return {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-        require("catppuccin").setup({
-            flavour = "mocha",
-            transparent_background = true,
-            integrations = {
-                cmp = true,
-                gitsigns = true,
-                nvimtree = true,
-                treesitter = true,
-                telescope = true,
-            },
-            color_overrides = {
-                mocha = {
-                    overlay0 = "#9fb0c2"
-                },
-            }
+	"catppuccin/nvim",
+	name = "catppuccin",
+	priority = 1000,
+	config = function()
+		require("catppuccin").setup({
+			custom_highlights = function(colors)
+				return {
+					WinSeparator = { fg = colors.blue }, -- this is working together with the option laststatus=3 to allow it to work with the vertical splits as well
+					LineNrAbove = { fg = "#758cbf", bold = false },
+					LineNr = { fg = "#ffffff", bold = true },
+					LineNrBelow = { fg = "#758cbf", bold = false },
+				}
+			end,
+			flavour = "mocha",
+			transparent_background = true,
+			integrations = {
+				cmp = true,
+				gitsigns = true,
+				nvimtree = true,
+				neotree = true,
+				treesitter = true,
+				telescope = true,
+				which_key = true,
+			},
+			color_overrides = {
+				mocha = {
+					overlay0 = "#9fb0c2",
+				},
+			},
+		})
 
-        })
-        vim.cmd("colorscheme catppuccin")
-        LineNumberColors()
-    end,
+		vim.cmd("colorscheme catppuccin")
+
+        -- add rounded borders to lsp hover
+		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+	end,
 }
